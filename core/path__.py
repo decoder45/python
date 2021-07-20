@@ -241,7 +241,7 @@ class Folder:
         self.path = path
         self.cwd = get_path_from_absolute(path)
         self.sep = get_path_sep(path)
-        self.name = path.split(sep)[-1]
+        self.name = path.split(self.sep)[-1]
 
         # if is_folder(path): # exists on disk
         #     self.size_in_bytes = get_size_in_bytes(path)
@@ -283,5 +283,4 @@ def tree_representation(folder: str):
 
 # TESTING
 if __name__ == '__main__':
-    p = "D:\\Alexzander__\\PythonApplications\\Timer\\dist\\Timer\\Timer.exe"
-    print(not is_file(p))
+    pass

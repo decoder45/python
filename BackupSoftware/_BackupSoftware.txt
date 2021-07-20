@@ -25,7 +25,7 @@ pscp -q -P 22 -pw uuu123 "D:\Alexzander__\programming\python\BackupSoftware\impo
 
 pscp -q -P 22 -pw uuu123 "D:\Alexzander__\programming\python\BackupSoftware\server\BackupSoftwareServer.py" root@192.168.1.234:"/root/alexzander"
 
-
+pscp -i ~/.ssh/ubuntu_192_168_1_71.ppk -P 22 "~/backup_18.07.2021_Alexzander__.tar.gz" alexzander@192.168.1.71:"/home/alexzander/backup/asusroggl553vd"
 
 this is good when you want to copy the folder
 pscp -q -r -P 22 -pw uuu123 "D:\Alexzander__\Google" root@192.168.1.234:"/root/alexzander"
