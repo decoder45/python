@@ -78,8 +78,10 @@ def get_current_time(__format=time_format):
 
 
 def get_current_hour():
-    return datetime.now().stftime("%H")
+    return datetime.now().strftime("%H")
 
+def get_current_minute():
+    return datetime.now().strftime("%M")
 
 
 def get_current_datetime(__format=datetime_format):

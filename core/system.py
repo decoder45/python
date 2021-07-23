@@ -11,8 +11,9 @@
 import os
 import sys
 import platform
+from pathlib import Path
 
-# core package ( pip install python-core )
+# core package ( pip installpython-core )
 import core.exceptions
 import core.aesthetics
 
@@ -77,6 +78,17 @@ def get_processor():
 def get_python_interpreter_path():
     return sys.executable
 
+
+cpu_system_file = Path("/proc/stat")
+def get_CPU_percentage():
+    cpu_line = cpu_system_file.read_text().split("\n")[0]
+    items = list(map(int, cpu_line.split()[1:]))
+
+    idle_percentage = (items[3] * 100) / sum(items)
+    idle_percentage = fixed_set_precision_float(idle_percentage, 2)
+    cpu_usage_percentage = 100 - idle_percentage
+    
+    return cpu_usage_percentage
 
 
 # TESTING
